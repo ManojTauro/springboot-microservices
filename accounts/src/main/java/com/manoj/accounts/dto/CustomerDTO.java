@@ -31,7 +31,7 @@ public record CustomerDTO(
 //        @Schema(
 //                description = "Account details of the Customer"
 //        )
-        AccountDTO accountsDto
+        AccountDTO accountDTO
 ) {
 
 }
