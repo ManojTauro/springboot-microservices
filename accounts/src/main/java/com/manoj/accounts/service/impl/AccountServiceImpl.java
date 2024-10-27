@@ -34,8 +34,6 @@ public class AccountServiceImpl implements AccountService {
             throw new CustomerExistsException("Customer already registered with given mobile number " + customerDTO.mobileNumber());
 
         Customer customer = CustomerMapper.toCustomer(customerDTO, new Customer());
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("Anonymous");
 
         Customer savedCustomer = customerRepository.save(customer);
 
@@ -50,8 +48,6 @@ public class AccountServiceImpl implements AccountService {
         newAccount.setAccountNumber(randomAccNumber);
         newAccount.setAccountType(AccountConstants.SAVINGS);
         newAccount.setBranchAddress(AccountConstants.ADDRESS);
-        newAccount.setCreatedAt(LocalDateTime.now());
-        newAccount.setCreatedBy("Anonymous");
 
         return newAccount;
     }
